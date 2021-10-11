@@ -1,7 +1,7 @@
 syntax = "proto3";
 option java_multiple_files = true;
-option go_package  = ".;vitalk_auth_proto";
-package vitalk.auth.common.proto;
+option go_package  = "github.com/vitalksocialnetwork/ProtoApi/auth/public";
+package public.common;
 
 message Status {
   // code =1 mean success

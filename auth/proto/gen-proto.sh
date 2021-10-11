@@ -1,2 +1,2 @@
 #!/bin/bash
-protoc -I ../proto/ ../proto/*.proto --go_out=../gen-go --go-grpc_out=../gen-go
+protoc -I ../../../../../github.com/vitalksocialnetwork/ProtoApi/auth/proto/ *.proto --go_out=../../../../../ --go-grpc_out=../../../../../

@@ -1,7 +1,7 @@
 syntax  = "proto3";
 option java_multiple_files = true;
-option go_package = ".;vitalk_auth_proto";
-package vitalk.auth.data.proto;
+option go_package ="github.com/vitalksocialnetwork/ProtoApi/auth/public";
+package public.data;
 
 import "common.proto";
 
@@ -12,7 +12,7 @@ message Ping {
 message Pong {
   int64 timestamp = 1;
   string serviceName = 2;
-  vitalk.auth.common.proto.Status status = 3;
+  common.Status status = 3;
 }
 
 message VerifyTokenRequest {
@@ -21,5 +21,5 @@ message VerifyTokenRequest {
 
 message VerifyTokenResponse {
   string token = 1;
-  vitalk.auth.common.proto.Status status = 2;
+  common.Status status = 2;
 }
