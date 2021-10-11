@@ -5,8 +5,9 @@ import (
 	"log"
 	"time"
 
-	pb "github.com/vitalksocialnetwork/ProtoApi/auth/gen-go"
 	"google.golang.org/grpc"
+
+	pb "github.com/vitalksocialnetwork/ProtoApi/auth/public"
 )
 
 const (
@@ -23,9 +24,9 @@ func main() {
 	c := pb.NewAuthServiceClient(conn)
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
-	r, err := c.Ping(ctx, &pb.PingRequest{timestamp: time.Second})
+	r, err := c.Ping(ctx, &pb.Ping{Timestamp: time.Now().Unix()})
 	if err != nil {
 		log.Fatalf("could not ping: %v", err)
 	}
-	log.Printf("Ping: %s", r.GetMessage())
+	log.Printf("Pong: %d", r.GetTimestamp())
 }
