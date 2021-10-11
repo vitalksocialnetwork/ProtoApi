@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option go_package = ".;vitalk_auth_proto";
+package vitalk.auth.api.proto;
+
+import "auth.proto";
+
+service AuthService {
+  rpc Ping (vitalk.auth.data.proto.Ping) returns (vitalk.auth.data.proto.Pong){}
+  rpc VerifyToken(vitalk.auth.data.proto.VerifyTokenRequest) returns (vitalk.auth.data.proto.VerifyTokenResponse){}
+}
