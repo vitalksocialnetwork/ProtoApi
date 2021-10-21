@@ -1,0 +1,27 @@
+syntax  = "proto3";
+option java_multiple_files = true;
+option go_package ="github.com/vitalksocialnetwork/ProtoApi/profile/public";
+package public.data;
+
+import "common.proto";
+
+message Ping {
+  int64 timestamp = 1;
+}
+
+message Pong {
+  int64 timestamp = 1;
+  string serviceName = 2;
+  common.Status status = 3;
+}
+
+message LoginRequest {
+   string username = 1;
+   string password = 2;
+}
+
+message LoginResponse {
+  string userID = 1;
+  string passwordHash = 2;
+  common.Status status = 3;
+}

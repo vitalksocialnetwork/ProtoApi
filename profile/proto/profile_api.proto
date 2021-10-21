@@ -1,0 +1,11 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option go_package ="github.com/vitalksocialnetwork/ProtoApi/profile/public";
+package public.api;
+
+import "profile.proto";
+
+service ProfileService {
+  rpc Ping (data.Ping) returns (data.Pong){}
+  rpc Login(data.LoginRequest) returns (data.LoginResponse){}
+}
